@@ -84,3 +84,7 @@ def logout(response: Response):
 @app.get("/qp")
 async def qpprocess(a:int = 10 , b:int = 20):
     return f"sumofqp {a+b}"
+
+@app.get("/awsserver")
+async def aws():
+    return {"subject":"this endpoint is from aws"}
