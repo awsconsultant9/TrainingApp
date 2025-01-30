@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_INSTANCE_IP = "13.203.160.38"  // Replace with your EC2 instance IP
-        SSH_CREDENTIALS_ID = "d5d4a42b-5190-4966-b1e9-df8f35ee3483"  // Replace with your Jenkins SSH credentials ID
+        SSH_CREDENTIALS_ID = "064474ad-c93c-47d8-b6f1-db68411162b6"  // Replace with your Jenkins SSH credentials ID
     }
 
     stages {
@@ -15,8 +15,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'echo Building on Windows'
-                  // 'echo "Building the application..."'
+                // bat 'echo Building on Windows'
+                  // sh 'echo "Building the application..."'
                 // Add build commands here (e.g., npm install, mvn package, etc.)
             }
         }
