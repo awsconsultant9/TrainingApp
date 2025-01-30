@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'awsconsultant9/TrainingApp.git'
+                git branch: 'main', url: 'git@github.com:awsconsultant9/TrainingApp.git'
             }
         }
 
