@@ -35,6 +35,28 @@ stage('Deploy to Local Machine') {
             sh 'sudo systemctl restart my-project'  // Replace with your actual service name
         }
     }
+    stage('Start FastAPI App') {
+    steps {
+        script {
+            // Start the FastAPI app using uvicorn or gunicorn
+            // Optionally use systemd if needed (you can run it as a service)
+            sh """
+                # Activate the virtual environment if using one
+                # source /path/to/virtualenv/bin/activate
+
+                # If using uvicorn to run the FastAPI app:
+                nohup uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4 > fastapi.log 2>&1 &
+
+                # Alternatively, if using gunicorn (recommended for production):
+                # nohup gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --host 0.0.0.0 --port 8000 > fastapi.log 2>&1 &
+
+                # If the app is managed by systemd (optional):
+               #  sudo systemctl restart fastapi-app
+            """
+        }
+    }
+}
+
 }
 
     }
