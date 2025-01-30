@@ -26,13 +26,13 @@ stage('Deploy to Local Machine') {
     steps {
         script {
             // Navigate to the cloned repository
-            dir('/path/to/cloned/repo') {
+            dir('/var/lib/jenkins/workspace/cicdpipeline') {
                 // Pull the latest changes from the main branch
                 sh 'git pull origin main'
             }
             
             // Restart the application service
-            sh 'sudo systemctl restart myapp'  // Replace with your actual service name
+            sh 'sudo systemctl restart my-project'  // Replace with your actual service name
         }
     }
 }
