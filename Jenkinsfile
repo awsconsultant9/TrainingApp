@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                poetry install
+                bat 'echo Building on Windows'
                   // 'echo "Building the application..."'
                 // Add build commands here (e.g., npm install, mvn package, etc.)
             }
