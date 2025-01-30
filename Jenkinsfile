@@ -32,7 +32,7 @@ stage('Deploy to Local Machine') {
             }
             
             // Restart the application service
-            # sh 'sudo systemctl restart my-project'  // Replace with your actual service name
+            // sh 'sudo systemctl restart my-project'   Replace with your actual service name
         }
     }
 }
