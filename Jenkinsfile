@@ -17,6 +17,7 @@ pipeline {
             steps {
                 // bat 'echo Building on Windows'
                   sh 'echo "Building the application..."'
+                poetry install
                 // Add build commands here (e.g., npm install, mvn package, etc.)
             }
         }
