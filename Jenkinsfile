@@ -22,20 +22,20 @@ pipeline {
             }
         }
 
-        stage('Deploy to EC2') {
-            steps {
-                script {
-                    sshagent (credentials: [SSH_CREDENTIALS_ID]) {
-                        sh """
-                            ssh -o StrictHostKeyChecking=no ubuntu@${AWS_INSTANCE_IP} << EOF
-                            cd /home/ubuntu/app
-                            git pull origin main
-                            sudo systemctl restart myapp  # Restart your application service
-                            EOF
-                        """
-                    }
-                }
+stage('Deploy to Local Machine') {
+    steps {
+        script {
+            // Navigate to the cloned repository
+            dir('/path/to/cloned/repo') {
+                // Pull the latest changes from the main branch
+                sh 'git pull origin main'
             }
+            
+            // Restart the application service
+            sh 'sudo systemctl restart myapp'  // Replace with your actual service name
         }
+    }
+}
+
     }
 }
