@@ -15,6 +15,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                poetry install
                   // 'echo "Building the application..."'
                 // Add build commands here (e.g., npm install, mvn package, etc.)
             }
