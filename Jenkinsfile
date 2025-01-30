@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 // bat 'echo Building on Windows'
-                  // sh 'echo "Building the application..."'
+                  sh 'echo "Building the application..."'
                 // Add build commands here (e.g., npm install, mvn package, etc.)
             }
         }
