@@ -35,6 +35,7 @@ stage('Deploy to Local Machine') {
             sh 'sudo systemctl restart my-project'  // Replace with your actual service name
         }
     }
+}
     stage('Start FastAPI App') {
     steps {
         script {
@@ -55,7 +56,7 @@ stage('Deploy to Local Machine') {
             """
         }
     }
-}
+
 
 }
 
